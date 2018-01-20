@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "4"
+script: npm run coverage && npm run karma
+before_install: npm install -g codeclimate-test-reporter
+after_script:
+  - codeclimate-test-reporter < coverage/lcov.info

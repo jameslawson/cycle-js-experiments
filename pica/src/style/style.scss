@@ -1,0 +1,117 @@
+.carta-cursor {
+  position: absolute;
+  left: 472px;
+  top: 80px;
+  z-index: 3;
+  width: 0px;
+  height: 17px;
+  border-left: 2px solid black;
+  font-size: 0;
+}
+
+.selection {
+  background: #76a7fa;
+  position: absolute;
+  z-index: 1;
+  height: 16px;
+  // opacity: 1;
+}
+.lines {
+  z-index: 2;
+  position: relative;
+}
+
+.carta-cursor.blink-on {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: blink;
+}
+
+@keyframes blink {
+  from { opacity: 1 }
+  13%  { opacity: 0 }
+  50%  { opacity: 0 }
+  63%  { opacity: 1 }
+  to   { opacity: 1 }
+}
+
+
+html, body {height: 100%; overflow: hidden}
+
+.carta-cursor.italics {
+  display: inline;
+  -webkit-transform: rotate(13deg);
+}
+
+.carta-cursor.bold {
+  border-left: 3px solid black;
+}
+
+.carta {
+  outline: none; // remove outline from tabindex
+}
+
+
+.carta-editor {
+  background: #CCC;
+  border-bottom: 3px solid black;
+  cursor: text;
+  font-family: sans-serif;
+  // padding: 6px;
+  position: relative;
+  min-height: 100px;
+  -webkit-user-select: none; // remove selection
+}
+
+.ime {
+  position: absolute;
+  left: 472px;
+  top: 80px;
+
+  height: 17px;
+}
+
+.line {
+  margin: 0;
+  line-height: 16px;
+  white-space: pre-wrap;
+  height: 16px;
+  font-size: 16px;
+}
+
+.carta-toolbar {
+  background: white;
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+
+.toolbar-button {
+  float: left;
+  cursor: pointer;
+  width: 25px;
+  border-bottom: 3px solid black;
+  // margin-right: 1px;
+  height: 22px;
+  background: black;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none; // remove selection
+  line-height: 25px;
+}
+
+.toolbar-button.active {
+  border-bottom: 3px solid red;
+}
+
+.pastecapture {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    outline: none;
+}

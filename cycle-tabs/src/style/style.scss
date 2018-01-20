@@ -1,0 +1,106 @@
+html {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  padding: 16px;
+}
+
+.container {
+  background: #F3F3EE;
+  padding: 24px;
+}
+
+.tabs {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.carousel-viewport {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.left, .right {
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+  background: black;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  &:hover {
+    background: #4FC3F7;
+    cursor: pointer;
+  }
+  transition: background 0.1s;
+}
+
+.left.disabled,
+.right.disabled {
+  cursor: auto;
+  color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.left {
+  right: 55px;
+  &::after{
+    content: "<"
+  }
+}
+
+.right {
+  right: 0;
+  &::after{
+    content: ">"
+  }
+}
+
+
+.carousel-track {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  transition: left 0.2s;
+}
+
+.item {
+  background: #CCC;
+  float: left;
+  width: 240px;
+  border: 1px solid black;
+  height: 100px;
+  margin-right: 10px;
+}
+
+
+.tab--selected {
+  background: #FFF;
+}
+
+.tab--simple:hover {
+  text-decoration: underline
+}
+
+.pane {
+  float: left;
+  background: #FFF;
+  width: 100%;
+  padding: 16px;
+}
