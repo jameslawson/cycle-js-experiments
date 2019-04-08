@@ -1,0 +1,18 @@
+body {
+  // background: red;
+}
+
+#foo {
+  outline: none;
+  padding: 8px;
+  font-size: 14px;
+  border: 2px solid #444;
+}
+
+#foo.foo--valid {
+  border-color: green;
+}
+
+#foo.foo--invalid {
+  border-color: red;
+}
